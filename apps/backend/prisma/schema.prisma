@@ -1,0 +1,55 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Initiative {
+  id          String   @id @default(uuid())
+  category    String?
+  title       String
+  description String
+  status      String
+  link        String?
+  imageUrl    String?
+  metrics     String?
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model FieldLog {
+  id          String   @id @default(uuid())
+  type        String
+  category    String?
+  title       String
+  content     String
+  imageUrls   String
+  youtubeId   String?
+  metrics     String?
+  eventDate   DateTime
+  isPublished Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model AboutUs {
+  id        String   @id @default(uuid())
+  title     String
+  subtitle  String?
+  content   String
+  imageUrl  String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Donation {
+  id        String   @id @default(uuid())
+  amount    Float
+  donorName String
+  date      DateTime @default(now())
+  projectId String?
+}

@@ -1,0 +1,28 @@
+{
+  "name": "tianipekins-foundation",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "yarn workspace @tianipekins/backend start",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,js,json,css,md}\"",
+    "check-types": "turbo run check-types",
+    "db:generate": "yarn workspace @tianipekins/backend db:generate",
+    "db:migrate": "yarn workspace @tianipekins/backend db:migrate",
+    "db:migrate:deploy": "yarn workspace @tianipekins/backend db:migrate:deploy",
+    "db:studio": "yarn workspace @tianipekins/backend db:studio",
+    "db:seed": "yarn workspace @tianipekins/backend db:seed"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "turbo": "^2.9.12"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "yarn@1.22.22",
+  "workspaces": [
+    "apps/*"
+  ]
+}
