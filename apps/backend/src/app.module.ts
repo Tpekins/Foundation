@@ -4,11 +4,12 @@ import { PrismaModule } from './prisma.module';
 import { InitiativesModule } from './initiatives/initiatives.module';
 import { FieldLogsModule } from './field-logs/field-logs.module';
 import { AboutUsModule } from './about-us/about-us.module';
+import { RootsModule } from './roots/roots.module';
 import { DonationsModule } from './donations/donations.module';
 import { AdminGuard } from './admin.guard';
 
 @Module({
-  imports: [PrismaModule, InitiativesModule, FieldLogsModule, AboutUsModule, DonationsModule],
+  imports: [PrismaModule, InitiativesModule, FieldLogsModule, AboutUsModule, RootsModule, DonationsModule],
   controllers: [AppController],
   providers: [AdminGuard],
 })
