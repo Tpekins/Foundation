@@ -1,5 +1,5 @@
 {
-  "buildCommand": "yarn install && yarn workspace @tianipekins/frontend build",
+  "buildCommand": "yarn install && yarn workspace frontend build",
   "outputDirectory": "apps/frontend/dist",
   "framework": "vite",
   "rewrites": [{ "source": "/(.*)", "destination": "/" }]
