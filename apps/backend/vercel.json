@@ -1,5 +1,3 @@
 {
-  "buildCommand": "yarn install && yarn workspace @tianipekins/backend build",
-  "outputDirectory": "apps/backend/dist-server",
-  "framework": "node-server"
+  "outputDirectory": "dist"
 }
