@@ -9,6 +9,7 @@ interface InitiativeCard {
   title: string;
   description: string;
   link?: string;
+  imageUrl?: string | null;
   color: string;
 }
 
@@ -35,6 +36,7 @@ export function Initiatives() {
               title: 'LocalHands.Africa',
               description: 'A free platform connecting local artisans   painters, diggers, hawkers   directly with the clients who need them.',
               link: 'https://localhands.africa',
+              imageUrl: null,
               color: 'from-signal to-ochre'
             },
             {
@@ -44,6 +46,7 @@ export function Initiatives() {
               title: 'Smart Infrastructure',
               description: 'Offline Biometric School Attendance System. A low-cost fingerprint attendance log that runs entirely offline against a localized database.',
               link: '#',
+              imageUrl: null,
               color: 'from-cassava to-signal'
             }
           ]);
@@ -103,7 +106,7 @@ export function Initiatives() {
             })}
           </div>
 
-          <div className="border-t-2 border-ink mb-[10px]" />
+          <div className="h-[2px] bg-gradient-to-r from-signal/50 via-ochre/40 to-signal/50 mb-9" />
 
           {visibleInitiatives.length === 0 ? (
             <p className="font-body text-ink-soft text-[0.95rem] py-[40px]">
@@ -112,18 +115,27 @@ export function Initiatives() {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-[22px]">
               {visibleInitiatives.map(initiative => (
-                <div key={initiative.id} className="bg-soil rounded-[4px] p-[34px] relative overflow-hidden transition-transform hover:-translate-y-[3px]">
+                <div key={initiative.id} className="bg-soil rounded-[4px] p-[34px] relative overflow-hidden transition-transform hover:-translate-y-[3px] group">
                   <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${initiative.color || 'from-signal to-ochre'}`}></div>
-                  <span className="font-mono text-[0.66rem] tracking-[0.1em] uppercase text-signal mb-3 block">{initiative.status}</span>
-                  <h3 className="font-display font-extrabold text-[1.3rem] text-paper mb-3">{initiative.title}</h3>
-                  <p className="text-paper/[0.85] text-[0.94rem] mb-5">
-                    {initiative.description}
-                  </p>
-                  {initiative.link && (
-                    <a href={initiative.link} target={initiative.link?.startsWith('http') ? "_blank" : undefined} rel={initiative.link?.startsWith('http') ? "noopener noreferrer" : undefined} className="font-ui font-bold text-[0.74rem] tracking-[0.04em] uppercase px-[18px] py-[10px] rounded-sm inline-flex items-center transition-all cursor-pointer border-[1.5px] border-paper/[0.6] text-paper bg-transparent hover:border-signal hover:text-signal no-underline w-fit">
-                      See how it works →
-                    </a>
-                  )}
+                  <div className="flex gap-6">
+                    <div className="flex-1 min-w-0">
+                      <span className="font-mono text-[0.66rem] tracking-[0.1em] uppercase text-signal mb-3 block">{initiative.status}</span>
+                      <h3 className="font-display font-extrabold text-[1.3rem] text-paper mb-3">{initiative.title}</h3>
+                      <p className="text-paper/[0.85] text-[0.94rem] mb-5">
+                        {initiative.description}
+                      </p>
+                      {initiative.link && (
+                        <a href={initiative.link} target={initiative.link?.startsWith('http') ? "_blank" : undefined} rel={initiative.link?.startsWith('http') ? "noopener noreferrer" : undefined} className="font-ui font-bold text-[0.74rem] tracking-[0.04em] uppercase px-[18px] py-[10px] rounded-sm inline-flex items-center transition-all cursor-pointer border-[1.5px] border-paper/[0.6] text-paper bg-transparent hover:border-signal hover:text-signal no-underline w-fit">
+                          See how it works →
+                        </a>
+                      )}
+                    </div>
+                    {initiative.imageUrl && (
+                      <div className="w-[140px] shrink-0 aspect-square rounded-[3px] overflow-hidden border border-paper/[0.15] group-hover:border-signal/40 transition-colors duration-300">
+                        <img src={initiative.imageUrl} alt="" className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110" />
+                      </div>
+                    )}
+                  </div>
                 </div>
               ))}
             </div>
