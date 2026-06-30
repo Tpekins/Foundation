@@ -46,6 +46,17 @@ model AboutUs {
   updatedAt DateTime @updatedAt
 }
 
+model RootsEntry {
+  id        String   @id @default(uuid())
+  title     String   @default("Built with our hands, ground to roof.")
+  description String @default("We don't design solutions on paper — we execute them. This is the permanent archive of our community school's full construction timeline, kept as proof of execution for partners and donors.")
+  videoTitle String  @default("School build, A to Z")
+  youtubeId String?
+  imageUrls String   @default("[]")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
 model Donation {
   id        String   @id @default(uuid())
   amount    Float
