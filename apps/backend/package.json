@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "dotenv -e ../../.env -- tsx watch src/main.ts",
+    "vercel-build": "prisma generate",
     "build": "prisma generate && tsc",
     "start": "node dist-server/main.js",
     "lint": "tsc --noEmit",
