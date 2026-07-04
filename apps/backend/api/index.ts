@@ -14,6 +14,8 @@ let cachedServer: express.Express | null = null;
 
 async function bootstrapServer(): Promise<express.Express> {
   const expressApp = express();
+  // Express 4.21+ throws when adapter calls app.get('router')
+  (expressApp as any).router = undefined;
   const adapter = new ExpressAdapter(expressApp);
   const app = await NestFactory.create(AppModule, adapter);
   app.enableCors();
