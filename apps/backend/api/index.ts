@@ -14,9 +14,20 @@ let cachedServer: express.Express | null = null;
 
 async function bootstrapServer(): Promise<express.Express> {
   const expressApp = express();
-  // Express 4.21+ throws when adapter calls app.get('router')
-  (expressApp as any).router = undefined;
-  const adapter = new ExpressAdapter(expressApp);
+  // Express 4.21 defined app.router as a non-configurable getter that throws.
+  // NestJS's ExpressAdapter.isMiddlewareApplied reads app.router directly,
+  // so we proxy the instance to return undefined for 'router'.
+  const proxiedApp = new Proxy(expressApp, {
+    get(target, prop, receiver) {
+      if (prop === 'router') return undefined;
+      return Reflect.get(target, prop, receiver);
+    },
+    set(target, prop, value) {
+      (target as any)[prop] = value;
+      return true;
+    },
+  });
+  const adapter = new ExpressAdapter(proxiedApp);
   const app = await NestFactory.create(AppModule, adapter);
   app.enableCors();
   await app.init();
