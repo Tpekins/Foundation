@@ -2,14 +2,11 @@ import 'reflect-metadata';
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import express from 'express';
+import { ValidationPipe } from '@nestjs/common';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { AppModule } from '../src/app.module';
 
-// NestJS apps normally call app.listen(port) and run forever. Vercel's
-// serverless model instead calls a single exported function per request, so
-// we build the Nest app once (cached across warm invocations) and hand
-// requests to its underlying Express instance directly, rather than ever
-// calling .listen().
 let cachedServer: express.Express | null = null;
 
 async function bootstrapServer(): Promise<express.Express> {
@@ -29,7 +26,20 @@ async function bootstrapServer(): Promise<express.Express> {
   });
   const adapter = new ExpressAdapter(proxiedApp);
   const app = await NestFactory.create(AppModule, adapter);
+
   app.enableCors();
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }));
+
+  const config = new DocumentBuilder()
+    .setTitle('Tianipekins.org API')
+    .setDescription('Ground to Signal — Foundation API')
+    .setVersion('1.0')
+    .addApiKey({ type: 'apiKey', name: 'x-api-key', in: 'header' }, 'admin')
+    .build();
+
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api/docs', app, document);
+
   await app.init();
   return expressApp;
 }
