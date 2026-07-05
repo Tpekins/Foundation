@@ -4,7 +4,7 @@ export function Programs() {
       <div className="max-w-[1140px] mx-auto px-7">
         <div className="flex items-baseline gap-[18px] mb-[14px] flex-wrap">
           <span className="font-mono text-[0.74rem] tracking-[0.1em] text-laterite bg-laterite/[0.08] border border-laterite/[0.25] px-[9px] py-[3px] rounded-sm uppercase whitespace-nowrap">
-            002 / Programs
+            001 / Programs
           </span>
           <h2 className="font-display font-extrabold text-[clamp(1.5rem,2.4vw,2rem)] text-ink tracking-[-0.01em]">What we actually do, week to week</h2>
         </div>

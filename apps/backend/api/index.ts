@@ -2,21 +2,51 @@ import 'reflect-metadata';
 import { NestFactory } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import express from 'express';
+import { ValidationPipe } from '@nestjs/common';
+import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import { AppModule } from '../src/app.module';
 
-// NestJS apps normally call app.listen(port) and run forever. Vercel's
-// serverless model instead calls a single exported function per request, so
-// we build the Nest app once (cached across warm invocations) and hand
-// requests to its underlying Express instance directly, rather than ever
-// calling .listen().
 let cachedServer: express.Express | null = null;
 
 async function bootstrapServer(): Promise<express.Express> {
   const expressApp = express();
-  const adapter = new ExpressAdapter(expressApp);
+
+  // Express 4.21 defines app.router as a non-configurable getter that
+  // throws. NestJS's ExpressAdapter.isMiddlewareApplied reads app.router
+  // directly, and some Express versions also throw on app.get('router').
+  // Patch both: proxy .router reads and override .get('router').
+  const nativeGet = expressApp.get.bind(expressApp);
+  (expressApp as any).get = (name: string, ...args: any[]) =>
+    args.length === 0 && name === 'router' ? false : nativeGet(name, ...args);
+
+  const proxiedApp = new Proxy(expressApp, {
+    get(target, prop, receiver) {
+      if (prop === 'router') return undefined;
+      return Reflect.get(target, prop, receiver);
+    },
+    set(target, prop, value) {
+      (target as any)[prop] = value;
+      return true;
+    },
+  });
+
+  const adapter = new ExpressAdapter(proxiedApp);
   const app = await NestFactory.create(AppModule, adapter);
+
   app.enableCors();
+  app.useGlobalPipes(new ValidationPipe({ whitelist: true, forbidNonWhitelisted: true }));
+
+  const config = new DocumentBuilder()
+    .setTitle('Tianipekins.org API')
+    .setDescription('Ground to Signal — Foundation API')
+    .setVersion('1.0')
+    .addApiKey({ type: 'apiKey', name: 'x-api-key', in: 'header' }, 'admin')
+    .build();
+
+  const document = SwaggerModule.createDocument(app, config);
+  SwaggerModule.setup('api/docs', app, document);
+
   await app.init();
   return expressApp;
 }
