@@ -1,12 +1,32 @@
+import { FounderCarousel } from "./FounderCarousel";
+
+const FOUNDER_MEDIA = [
+  {
+    type: "image" as const,
+    url: "https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=600&h=750&fit=crop",
+    alt: "Tiani harvesting cocoa at the field site",
+    label: "PHOTO   FIELD, BUEA",
+  },
+  {
+    type: "image" as const,
+    url: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=600&h=750&fit=crop",
+    alt: "Teaching digital literacy in the community",
+    label: "PHOTO   CLASSROOM, BUEA",
+  },
+  {
+    type: "image" as const,
+    url: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&h=750&fit=crop",
+    alt: "Community outreach program",
+    label: "PHOTO   COMMUNITY, BUEA",
+  },
+];
+
 export function Founder() {
   return (
     <section id="founder" className="py-[78px]">
       <div className="max-w-[1140px] mx-auto px-7">
         <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-[50px] items-center">
-          <div className="aspect-[16/9] md:aspect-[4/5] bg-[linear-gradient(160deg,var(--color-cassava-d),var(--color-soil))] rounded-sm flex items-center justify-center text-paper/[0.65] font-mono text-[0.78rem] text-center p-5 relative border border-paper-dim">
-            [ Photo: Tiani harvesting cocoa, field site ]
-            <div className="absolute bottom-[14px] left-[14px] font-mono text-[0.64rem] tracking-[0.08em] text-ochre">PHOTO   FIELD, BUEA</div>
-          </div>
+          <FounderCarousel items={FOUNDER_MEDIA} autoSlideInterval={3000} />
           <div>
             <blockquote className="font-body italic text-[1.3rem] leading-[1.5] text-ink border-l-[3px] border-laterite pl-6 mb-4">
               Growing up, I never had the chance to learn how to use a computer. Everything we build here   the school, the labs, the field visits   exists to close that same gap for the next child in this community.
