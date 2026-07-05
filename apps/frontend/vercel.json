@@ -3,7 +3,7 @@
   "outputDirectory": "dist",
   "framework": "vite",
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://foundation-backend-git-dev-tpekins-projects.vercel.app/api/$1" },
+    { "source": "/api/(.*)", "destination": "https://foundation-backend-xi.vercel.app/api/$1" },
     { "source": "/(.*)", "destination": "/" }
   ]
 }
