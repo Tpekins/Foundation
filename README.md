@@ -1,6 +1,6 @@
 # Tianipekins.org Foundation
 
-> **Ground to Signal** — A grassroots engineering foundation based in Buea, Cameroon. Documenting community impact, smart infrastructure builds, and digital literacy.
+> **Ground to Signal** A grassroots engineering foundation based in Buea, Cameroon. Documenting community impact, smart infrastructure builds, and digital literacy.
 
 ## Folder Structure
 
