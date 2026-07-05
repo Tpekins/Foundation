@@ -18,11 +18,16 @@ export class StatsService {
 
     const totalDonated = donations.reduce((sum, d) => sum + d.amount, 0);
 
-    return [
+    const stats = [
       { value: `${initiatives.length || 3}+`, label: 'Ongoing programs' },
       { value: `${fieldLogs.length || 120}+`, label: 'Field logs published' },
       { value: `${donations.length || 25}+`, label: 'Community members engaged' },
-      { value: `$${totalDonated > 0 ? totalDonated.toLocaleString() : '0'}`, label: 'Donations received' },
     ];
+
+    if (totalDonated > 0) {
+      stats.push({ value: `${totalDonated.toLocaleString()} FCFA`, label: 'Donations received' });
+    }
+
+    return stats;
   }
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 import { DonateModal } from "./DonateModal";
+import { PartnerModal } from "./PartnerModal";
 import type { Initiative } from "../types";
 
 interface InitiativeCard {
@@ -20,6 +21,7 @@ const INITIATIVE_CATEGORIES = [
 
 export function Initiatives() {
   const [isDonateOpen, setIsDonateOpen] = useState(false);
+  const [isPartnerOpen, setIsPartnerOpen] = useState(false);
   const [initiatives, setInitiatives] = useState<InitiativeCard[]>([]);
   const [activeFilter, setActiveFilter] = useState('ALL');
 
@@ -145,7 +147,10 @@ export function Initiatives() {
              <h3 className="font-display font-bold text-xl text-ink mb-2">Join the Signal</h3>
              <p className="font-body text-ink-soft">We are open to collaborations with institutions, hardware engineers, and educators who share our vision for a technologically grounded Cameroon.</p>
              <div className="flex flex-wrap gap-4 mt-4">
-               <button className="font-ui font-bold text-[0.8rem] tracking-[0.04em] uppercase px-6 py-[13px] bg-laterite text-paper rounded-sm hover:bg-ochre hover:text-soil transition-colors">
+               <button 
+                 onClick={() => setIsPartnerOpen(true)}
+                 className="font-ui font-bold text-[0.8rem] tracking-[0.04em] uppercase px-6 py-[13px] bg-laterite text-paper rounded-sm hover:bg-ochre hover:text-soil transition-colors"
+               >
                   Partner with us
                </button>
                <button 
@@ -158,6 +163,7 @@ export function Initiatives() {
           </div>
         </div>
       <DonateModal isOpen={isDonateOpen} onClose={() => setIsDonateOpen(false)} />
+      <PartnerModal isOpen={isPartnerOpen} onClose={() => setIsPartnerOpen(false)} />
     </section>
     </>
   );

@@ -26,9 +26,9 @@ export function DonateModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
   };
 
   const presetAmounts = [
-    { value: 25, label: "Provides textbooks for one student", icon: <BookOpen size={18} /> },
-    { value: 150, label: "Funds a digital literacy lab session", icon: <Laptop size={18} /> },
-    { value: 500, label: "Supports hardware build materials", icon: <HandHeart size={18} /> },
+    { value: 15000, label: "Provides textbooks for one student", icon: <BookOpen size={18} /> },
+    { value: 90000, label: "Funds a digital literacy lab session", icon: <Laptop size={18} /> },
+    { value: 300000, label: "Supports hardware build materials", icon: <HandHeart size={18} /> },
   ];
 
   return (
@@ -59,7 +59,7 @@ export function DonateModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
                     {preset.icon}
                   </div>
                   <div>
-                    <div className="font-display font-bold text-xl text-ink">${preset.value}</div>
+                    <div className="font-display font-bold text-xl text-ink">{preset.value.toLocaleString()} FCFA</div>
                     <div className="font-ui text-sm text-ink-soft">{preset.label}</div>
                   </div>
                 </button>
@@ -69,13 +69,13 @@ export function DonateModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
             <div className="mb-8">
               <label className="block font-ui text-sm font-semibold text-ink mb-2">Or enter a custom amount</label>
               <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 font-display font-bold text-ink-soft">$</span>
+                <span className="absolute left-4 top-1/2 -translate-y-1/2 font-display font-bold text-ink-soft">FCFA</span>
                 <input 
                   type="number" 
                   value={customAmount}
                   onChange={(e) => { setCustomAmount(e.target.value); setAmount(null); }}
-                  placeholder="0.00"
-                  className="w-full bg-paper border border-paper-dim pl-8 pr-4 py-3 rounded-sm focus:outline-none focus:border-signal font-ui text-ink"
+                  placeholder="0"
+                  className="w-full bg-paper border border-paper-dim pl-16 pr-4 py-3 rounded-sm focus:outline-none focus:border-signal font-ui text-ink"
                 />
               </div>
             </div>
@@ -94,7 +94,7 @@ export function DonateModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
           <form onSubmit={handleDonate}>
             <h2 className="font-display font-bold text-2xl text-ink mb-2">Your Details</h2>
             <p className="font-body text-ink-soft mb-6">
-              You are donating <span className="font-bold text-ink">${amount || customAmount}</span> to the foundation.
+              You are donating <span className="font-bold text-ink">{(amount || Number(customAmount)).toLocaleString()} FCFA</span> to the foundation.
             </p>
 
             <div className="space-y-4 mb-8">
@@ -137,7 +137,7 @@ export function DonateModal({ isOpen, onClose }: { isOpen: boolean; onClose: () 
             </div>
             <h2 className="font-display font-bold text-3xl text-ink mb-3">Thank You</h2>
             <p className="font-body text-ink-soft mb-8">
-              Your contribution of <span className="font-bold text-ink">${amount || customAmount}</span> has been received. 
+              Your contribution of <span className="font-bold text-ink">{(amount || Number(customAmount)).toLocaleString()} FCFA</span> has been received. 
               Because of your support, another child will have the chance to learn computing.
             </p>
             <button 
