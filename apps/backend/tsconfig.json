@@ -3,7 +3,7 @@
     
     "module": "Node16",
     "moduleResolution": "Node16",
-    "types": ["node", "jest"],
+    "types": ["node"],
     "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
@@ -14,7 +14,7 @@
     "rootDir": "./src",
     "outDir": "./dist",
     "baseUrl": "./",
-    "ignoreDeprecations": "6.0",
+    "ignoreDeprecations": "5.0",
     "incremental": true,
     "skipLibCheck": true,
     "strictNullChecks": true,
