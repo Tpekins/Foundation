@@ -11,7 +11,7 @@ ALTER TABLE "Initiative" ADD COLUMN     "category" TEXT;
 CREATE TABLE "RootsEntry" (
     "id" TEXT NOT NULL,
     "title" TEXT NOT NULL DEFAULT 'Built with our hands, ground to roof.',
-    "description" TEXT NOT NULL DEFAULT 'We don''t design solutions on paper — we execute them. This is the permanent archive of our community school''s full construction timeline, kept as proof of execution for partners and donors.',
+    "description" TEXT NOT NULL DEFAULT 'We don''t design solutions on paper — we execute them. This is the permanent archive of our community school''s full construction timeline — from first stone to final beam.',
     "videoTitle" TEXT NOT NULL DEFAULT 'School build, A to Z',
     "youtubeId" TEXT,
     "imageUrls" TEXT NOT NULL DEFAULT '[]',

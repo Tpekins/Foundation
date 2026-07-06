@@ -49,7 +49,7 @@ model AboutUs {
 model RootsEntry {
   id        String   @id @default(uuid())
   title     String   @default("Built with our hands, ground to roof.")
-  description String @default("We don't design solutions on paper — we execute them. This is the permanent archive of our community school's full construction timeline, kept as proof of execution for partners and donors.")
+  description String @default("We don't design solutions on paper — we execute them. This is the permanent archive of our community school's full construction timeline — from first stone to final beam.")
   videoTitle String  @default("School build, A to Z")
   youtubeId String?
   imageUrls String   @default("[]")
