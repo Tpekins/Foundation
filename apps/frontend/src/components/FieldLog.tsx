@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { SEO } from "./SEO";
 import type { FoundationLog } from "../types";
 
 interface FormattedLog {
@@ -271,6 +272,11 @@ export function FieldLog() {
 
   return (
     <>
+      <SEO
+        title="Field Log"
+        description="Every visit, donation, and conversation — logged as it happens. A running record of community impact in Buea, Cameroon."
+        path="/field-log"
+      />
       <section className="bg-soil text-paper relative overflow-hidden py-[80px] pb-[60px]">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(65deg, #fff 0, #fff 1px, transparent 1px, transparent 30px)" }}></div>
         <div className="max-w-[1140px] mx-auto px-7 relative z-10">

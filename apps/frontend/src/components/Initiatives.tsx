@@ -1,6 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { DonateModal } from "./DonateModal";
 import { PartnerModal } from "./PartnerModal";
+import { SEO } from "./SEO";
 import type { Initiative } from "../types";
 
 interface InitiativeCard {
@@ -70,6 +71,11 @@ export function Initiatives() {
 
   return (
     <>
+      <SEO
+        title="Initiatives"
+        description="Independent projects we've built or incubated — from local gig economy platforms to smart infrastructure and offline biometric systems."
+        path="/initiatives"
+      />
       <section className="bg-soil text-paper relative overflow-hidden py-[80px] pb-[60px]">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(65deg, #fff 0, #fff 1px, transparent 1px, transparent 30px)" }}></div>
         <div className="max-w-[1140px] mx-auto px-7 relative z-10">

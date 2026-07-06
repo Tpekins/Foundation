@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Roots } from "../components/Roots";
+import { SEO } from "../components/SEO";
 
 export function AboutUs() {
   const [aboutData, setAboutData] = useState<{title: string, content: string, subtitle?: string} | null>(null);
@@ -13,6 +14,11 @@ export function AboutUs() {
 
   return (
     <>
+      <SEO
+        title="About Us"
+        description="Learn about the Tiani Pekins Foundation — our roots, mission, and the school we built from scratch in Buea, Cameroon."
+        path="/about"
+      />
       <section className="bg-soil text-paper relative overflow-hidden py-[80px] pb-[60px]">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(65deg, #fff 0, #fff 1px, transparent 1px, transparent 30px)" }}></div>
         <div className="max-w-[1140px] mx-auto px-7 relative z-10">
