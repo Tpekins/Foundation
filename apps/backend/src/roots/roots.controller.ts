@@ -12,9 +12,20 @@ export class RootsController {
     return this.rootsService.getRoots();
   }
 
+  @Get(':section')
+  async getRootsBySection(@Param('section') section: string) {
+    return this.rootsService.getRootsBySection(section);
+  }
+
   @Patch(':id')
   @UseGuards(AdminGuard)
   async update(@Param('id') id: string, @Body(ValidationPipe) body: UpdateRootsDto) {
     return this.rootsService.update(id, body);
+  }
+
+  @Patch('section/:section')
+  @UseGuards(AdminGuard)
+  async updateBySection(@Param('section') section: string, @Body(ValidationPipe) body: UpdateRootsDto) {
+    return this.rootsService.updateBySection(section, body);
   }
 }
