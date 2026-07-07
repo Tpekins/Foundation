@@ -3,8 +3,9 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
 model Initiative {
@@ -47,14 +48,18 @@ model AboutUs {
 }
 
 model RootsEntry {
-  id        String   @id @default(uuid())
-  title     String   @default("Built with our hands, ground to roof.")
-  description String @default("We don't design solutions on paper — we execute them. This is the permanent archive of our community school's full construction timeline — from first stone to final beam.")
-  videoTitle String  @default("School build, A to Z")
-  youtubeId String?
-  imageUrls String   @default("[]")
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  id          String   @id @default(uuid())
+  section     String   @default("build")
+  order       Int      @default(0)
+  title       String   @default("Built with our hands, ground to roof.")
+  description String   @default("We don't design solutions on paper — we execute them. This is the permanent archive of our community school's full construction timeline — from first stone to final beam.")
+  videoTitle  String   @default("School build, A to Z")
+  youtubeId   String?
+  imageUrls   String   @default("[]")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([section])
 }
 
 model Donation {
