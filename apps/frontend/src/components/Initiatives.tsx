@@ -47,7 +47,7 @@ export function Initiatives() {
               category: 'TECH INFRASTRUCTURE',
               status: 'Hardware Deployment',
               title: 'Smart Infrastructure',
-              description: 'Offline Biometric School Attendance System. A low-cost fingerprint attendance log that runs entirely offline against a localized database.',
+              description: 'Offline Biometric School Attendance System. A low-cost face recognition attendance log that runs entirely offline against a localized database.',
               link: '#',
               imageUrl: null,
               color: 'from-cassava to-signal'
@@ -73,7 +73,7 @@ export function Initiatives() {
     <>
       <SEO
         title="Initiatives"
-        description="Independent projects we've built or incubated — from local gig economy platforms to smart infrastructure and offline biometric systems."
+        description="Independent projects we've built or incubated from local gig economy platforms to smart infrastructure and offline biometric systems."
         path="/initiatives"
       />
       <section className="bg-soil text-paper relative overflow-hidden py-[80px] pb-[60px]">
@@ -151,7 +151,7 @@ export function Initiatives() {
 
           <div className="mt-12 p-8 bg-paper border border-paper-dim rounded-sm">
              <h3 className="font-display font-bold text-xl text-ink mb-2">Join the Signal</h3>
-             <p className="font-body text-ink-soft">We are open to collaborations with institutions, hardware engineers, and educators who share our vision for a technologically grounded Cameroon.</p>
+             <p className="font-body text-ink-soft">We are open to collaborations with institutions, hardware engineers, and educators who share our vision for a technologically grounded Africa.</p>
              <div className="flex flex-wrap gap-4 mt-4">
                <button 
                  onClick={() => setIsPartnerOpen(true)}
