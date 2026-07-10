@@ -16,7 +16,7 @@ export function AboutUs() {
     <>
       <SEO
         title="About Us"
-        description="Learn about the Tiani Pekins Foundation — our roots, mission, and the school we built from scratch in Buea, Cameroon."
+        description="Learn about the Tiani Pekins Foundation our roots, mission, and the school we built from scratch in Buea, Cameroon."
         path="/about"
       />
       <section className="bg-soil text-paper relative overflow-hidden py-[80px] pb-[60px]">
