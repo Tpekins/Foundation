@@ -18,7 +18,7 @@ const DEFAULT_SECTIONS: RootsSection[] = [
     section: 'build',
     order: 0,
     title: 'Built with our hands, ground to roof.',
-    description: "We don't design solutions on paper we execute them. This is the permanent archive of our community school's full construction timeline — from first stone to final beam.",
+    description: "We don't design solutions on paper we execute them. This is the permanent archive of our community school's full construction timeline from first stone to final beam.",
     videoTitle: 'School build, A to Z',
     youtubeId: null,
     imageUrls: '[]',
