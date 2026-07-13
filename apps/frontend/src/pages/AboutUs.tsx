@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Roots } from "../components/Roots";
 import { SEO } from "../components/SEO";
 
@@ -43,7 +44,9 @@ export function AboutUs() {
               </p>
             ) : (
               <p className="p-5 bg-paper-dim border border-ink-soft/10 italic text-ink rounded-sm">
-                Our story is being written   check back soon for the full account of how a vision born from local struggles turned into tangible action on the ground.
+                Tianipekins.org Foundation is a grassroots engineering foundation based in Buea, Cameroon, built from the ground up rather than from a plan written elsewhere.
+                 Our work spans digital literacy, moral education, agriculture, and direct community care, and behind each of these efforts is the same quiet
+                  commitment: engineering the offline hardware and systems that keep this work running, visit after visit, season after season.
               </p>
             )}
           </div>
@@ -52,6 +55,20 @@ export function AboutUs() {
       
       {/* We reuse the Roots component which documents the school building process */}
       <Roots />
+
+      <section className="bg-paper-dim py-[60px]">
+        <div className="max-w-[800px] mx-auto px-7 text-center">
+          <p className="font-body text-ink-soft text-[1.05rem] mb-6">
+            That's the foundation. Now see what we're building next.
+          </p>
+          <Link
+            to="/initiatives"
+            className="font-ui font-bold text-[0.8rem] tracking-[0.04em] uppercase px-8 py-[14px] bg-laterite text-paper rounded-sm hover:bg-ochre hover:text-soil transition-colors no-underline inline-block"
+          >
+            View Our Initiatives →
+          </Link>
+        </div>
+      </section>
     </>
   );
 }

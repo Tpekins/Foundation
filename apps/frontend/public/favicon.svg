@@ -1,4 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-  <rect width="512" height="512" rx="96" fill="#1DA1F2"/>
-  <text x="256" y="340" font-family="Arial, sans-serif" font-size="260" font-weight="bold" fill="white" text-anchor="middle">TP</text>
+  <rect width="512" height="512" rx="96" fill="#5a4435"/>
+  <rect x="0" y="0" width="512" height="8" fill="#f0b850"/>
+  <text x="256" y="330" font-family="'Segoe UI', Arial, sans-serif" font-size="240" font-weight="900" fill="#fcfaf5" text-anchor="middle">TP</text>
 </svg>

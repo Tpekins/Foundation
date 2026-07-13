@@ -1,6 +1,4 @@
-# Roots Section — Backend & Frontend Implementation Plan
-
-> **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
+# Roots Section - Backend & Frontend Implementation Plan
 
 **Goal:** Replace Roots.tsx hardcoded content with data fetched from the backend, so videos/images can be updated via the database.
 
@@ -192,7 +190,7 @@ cd apps/backend && npx tsc --noEmit
 
 Expected: No errors
 
-### Task 6: Update frontend Initiative type (already done — skip)
+### Task 6: Update frontend Initiative type (already done - skip)
 
 ### Task 7: Rewrite Roots.tsx to fetch from API
 
@@ -297,7 +295,7 @@ Expected: No errors
 
 ### Task 9: Seed default RootsEntry into database
 
-- [ ] **Option A: Create via the API** — Run the app, call POST to the roots endpoint with an admin key (or use the seed script below)
+- [ ] **Option A: Create via the API** - Run the app, call POST to the roots endpoint with an admin key (or use the seed script below)
 
 - [ ] **Option B: Add to seed.ts**
 

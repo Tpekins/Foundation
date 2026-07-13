@@ -10,7 +10,7 @@ export class PrismaService extends PrismaClient implements OnModuleInit, OnModul
       await this.$connect();
       this.logger.log('Database connected');
     } catch (e) {
-      this.logger.warn('Database not reachable on startup (cold start) — will connect lazily on first query');
+      this.logger.warn('Database not reachable on startup (cold start) - will connect lazily on first query');
     }
   }
 

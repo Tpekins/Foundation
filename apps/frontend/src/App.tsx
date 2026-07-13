@@ -5,6 +5,7 @@ import { Home } from "./pages/Home";
 import { AboutUs } from "./pages/AboutUs";
 import { Initiatives } from "./components/Initiatives";
 import { FieldLog } from "./components/FieldLog";
+import { NotFound } from "./components/NotFound";
 
 export default function App() {
   return (
@@ -16,6 +17,7 @@ export default function App() {
             <Route path="/about" element={<AboutUs />} />
             <Route path="/initiatives" element={<Initiatives />} />
             <Route path="/field-log" element={<FieldLog />} />
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </BrowserRouter>
