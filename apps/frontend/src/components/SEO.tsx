@@ -41,7 +41,7 @@ export function SEO({
       "A grassroots engineering foundation working across digital literacy, moral education, agriculture, and community care in Buea, Cameroon.",
     founder: {
       "@type": "Person",
-      name: "Tiani Pekins",
+      name: "Tiani Pekins Ebika",
       url: "https://tianipekins.com",
     },
     address: {
