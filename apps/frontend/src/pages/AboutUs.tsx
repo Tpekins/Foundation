@@ -43,7 +43,9 @@ export function AboutUs() {
               </p>
             ) : (
               <p className="p-5 bg-paper-dim border border-ink-soft/10 italic text-ink rounded-sm">
-                Our story is being written   check back soon for the full account of how a vision born from local struggles turned into tangible action on the ground.
+                Tianipekins.org Foundation is a grassroots engineering foundation based in Buea, Cameroon, built from the ground up rather than from a plan written elsewhere.
+                 Our work spans digital literacy, moral education, agriculture, and direct community care, and behind each of these efforts is the same quiet
+                  commitment: engineering the offline hardware and systems that keep this work running, visit after visit, season after season.
               </p>
             )}
           </div>

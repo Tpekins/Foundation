@@ -8,10 +8,10 @@ export function Hero() {
             FIELD LOG   BUEA, SILICON MOUNTAIN, CAMEROON
           </div>
           <h1 className="font-display font-extrabold text-[clamp(1.9rem,4vw,3.1rem)] leading-[1.1] tracking-[-0.01em] mb-5">
-            From <span className="text-ochre">red earth</span> to fingerprint sensor   we build the whole pipeline.
+            From <span className="text-ochre">red earth</span> to fingerprint sensor - we build the whole pipeline.
           </h1>
           <p className="font-body text-[1.12rem] text-paper/[0.92] max-w-[560px] mb-8">
-            A grassroots foundation working across digital literacy, moral education, agriculture, and community care   engineering the offline hardware that runs underneath it, and giving Cameroon's informal workers a free way to be found.
+            A grassroots foundation working across digital literacy, moral education, agriculture, and community care-engineering the offline hardware that runs underneath it, and giving Cameroon's informal workers a free way to be found.
           </p>
           <div className="flex gap-[14px] flex-wrap">
             <a href="/about#ourroots" className="font-ui font-bold text-[0.8rem] tracking-[0.04em] uppercase px-6 py-[13px] no-underline rounded-sm inline-flex items-center gap-2 transition-all cursor-pointer border-none bg-laterite text-paper hover:bg-ochre hover:text-soil hover:-translate-y-[1px] focus-visible:outline-2 focus-visible:outline-signal focus-visible:outline-offset-2">
