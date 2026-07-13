@@ -12,7 +12,7 @@ export function Home() {
     <>
       <SEO
         title="Home"
-        description="A grassroots engineering foundation in Buea, Cameroon building smart infrastructure, teaching digital literacy, and documenting community impact from ground to signal."
+        description="From the cocoa farm to the classroom, we're proving that technology and agriculture can grow together. Our roots, mission, and the school we built from scratch - digital literacy, agriculture, and community care."
         path="/"
       />
       <Hero />
