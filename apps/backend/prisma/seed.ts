@@ -9,7 +9,7 @@ async function main() {
     create: {
       id: 'seed-default-about',
       title: 'Our Roots & Mission',
-      content: 'Tianipekins.org Foundation is a grassroots engineering foundation based in Buea, Cameroon. We work across digital literacy, moral education, agriculture, and community care — engineering the offline hardware that runs underneath it all.',
+      content: 'Tianipekins.org Foundation is a grassroots engineering foundation based in Buea, Cameroon. We work across digital literacy, moral education, agriculture, and community care - engineering the offline hardware that runs underneath it all.',
     },
   });
 
@@ -18,14 +18,14 @@ async function main() {
       {
         title: 'Smart Infrastructure Lab',
         description: 'A lab focused on building smart, scalable solutions for local communities.',
-        status: 'Active — incubated, not owned',
+        status: 'Active - incubated, not owned',
         link: 'https://smartlab.africa',
         isPublished: true,
       },
       {
         title: 'Local Hands',
         description: 'Connecting local artisans directly with clients.',
-        status: 'Active — incubated, not owned',
+        status: 'Active - incubated, not owned',
         link: 'https://localhands.africa',
         isPublished: true,
       },

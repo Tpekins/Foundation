@@ -36,7 +36,7 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Tianipekins.org API')
-    .setDescription('Ground to Signal — Foundation API')
+    .setDescription('Ground to Signal - Foundation API')
     .setVersion('1.0')
     .addApiKey({ type: 'apiKey', name: 'x-api-key', in: 'header' }, 'admin')
     .build();
