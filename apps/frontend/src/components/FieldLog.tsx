@@ -274,7 +274,7 @@ export function FieldLog() {
     <>
       <SEO
         title="Field Log"
-        description="Every visit, donation, and conversation - logged as it happens. A running record of community impact in Buea, Cameroon."
+        description="Every visit, donation, and conversation - logged as it happens. Tracking community impact from Buea to the wider region."
         path="/field-log"
       />
       <section className="bg-soil text-paper relative overflow-hidden py-[80px] pb-[60px]">

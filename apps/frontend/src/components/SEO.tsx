@@ -14,7 +14,7 @@ interface SEOProps {
 
 const PAGE_LABELS: Record<string, string> = {
   "/": "Home",
-  "/about": "Our Roots",
+  "/our-roots": "Our Roots",
   "/initiatives": "Initiatives",
   "/field-log": "Field Log",
   "/contact": "Contact",
@@ -27,7 +27,11 @@ export function SEO({
   image = OG_IMAGE,
   type = "website",
 }: SEOProps) {
-  const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} - Ground to Signal`;
+  const fullTitle = title
+    ? title === SITE_NAME
+      ? SITE_NAME
+      : `${title} | ${SITE_NAME}`
+    : `${SITE_NAME} - Ground to Signal`;
   const url = `${SITE_URL}${path}`;
   const pageLabel = PAGE_LABELS[path] || title || "Page";
 

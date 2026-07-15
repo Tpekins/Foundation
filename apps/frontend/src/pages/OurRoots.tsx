@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Roots } from "../components/Roots";
 import { SEO } from "../components/SEO";
 
-export function AboutUs() {
+export function OurRoots() {
   const [aboutData, setAboutData] = useState<{title: string, content: string, subtitle?: string} | null>(null);
 
   useEffect(() => {
@@ -16,9 +16,9 @@ export function AboutUs() {
   return (
     <>
       <SEO
-        title="About Us"
-        description="Our roots, mission, and the school we built from scratch - digital literacy, agriculture, and community care."
-        path="/about"
+        title="Our Roots"
+        description="From school construction to community teaching, donations to orphanages, and meetings with farmers - the full story of our work across communities."
+        path="/our-roots"
       />
       <section className="bg-soil text-paper relative overflow-hidden py-[80px] pb-[60px]">
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: "repeating-linear-gradient(65deg, #fff 0, #fff 1px, transparent 1px, transparent 30px)" }}></div>
@@ -43,7 +43,7 @@ export function AboutUs() {
                 {aboutData.content}
               </p>
             ) : (
-              <p className="p-5 bg-paper-dim border border-ink-soft/10 italic text-ink rounded-sm">
+              <p className="p-5 bg-paper-dim border border-ink-soft/10 text-ink rounded-sm">
                 Tianipekins.org Foundation is a grassroots engineering foundation based in Buea, Cameroon, built from the ground up rather than from a plan written elsewhere.
                  Our work spans digital literacy, moral education, agriculture, and direct community care, and behind each of these efforts is the same quiet
                   commitment: engineering the offline hardware and systems that keep this work running, visit after visit, season after season.

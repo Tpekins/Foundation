@@ -25,7 +25,7 @@ export function CallToAction() {
               Donate Now
             </button>
             <a
-              href="/about"
+              href="/our-roots"
               className="font-ui font-bold text-[0.8rem] tracking-[0.04em] uppercase px-8 py-[14px] border-[1.5px] border-paper/[0.5] text-paper rounded-sm hover:border-signal hover:text-signal transition-colors no-underline"
             >
               Learn More →
