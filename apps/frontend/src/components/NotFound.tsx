@@ -29,7 +29,7 @@ export function NotFound() {
               Back to Home →
             </Link>
             <Link
-              to="/about"
+              to="/our-roots"
               className="font-ui font-bold text-[0.8rem] tracking-[0.04em] uppercase px-6 py-[13px] no-underline rounded-sm inline-flex items-center gap-2 transition-all cursor-pointer border-[1.5px] border-paper/[0.6] text-paper bg-transparent hover:border-signal hover:text-signal hover:-translate-y-[1px]"
             >
               Our Story

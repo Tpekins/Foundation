@@ -14,7 +14,7 @@ export function Hero() {
             A grassroots foundation working across digital literacy, moral education, agriculture, and community care-engineering the offline hardware that runs underneath it, and giving Cameroon's informal workers a free way to be found.
           </p>
           <div className="flex gap-[14px] flex-wrap">
-            <a href="/about#ourroots" className="font-ui font-bold text-[0.8rem] tracking-[0.04em] uppercase px-6 py-[13px] no-underline rounded-sm inline-flex items-center gap-2 transition-all cursor-pointer border-none bg-laterite text-paper hover:bg-ochre hover:text-soil hover:-translate-y-[1px] focus-visible:outline-2 focus-visible:outline-signal focus-visible:outline-offset-2">
+            <a href="/our-roots#ourroots" className="font-ui font-bold text-[0.8rem] tracking-[0.04em] uppercase px-6 py-[13px] no-underline rounded-sm inline-flex items-center gap-2 transition-all cursor-pointer border-none bg-laterite text-paper hover:bg-ochre hover:text-soil hover:-translate-y-[1px] focus-visible:outline-2 focus-visible:outline-signal focus-visible:outline-offset-2">
               See the school build →
             </a>
             <a href="/initiatives" className="font-ui font-bold text-[0.8rem] tracking-[0.04em] uppercase px-6 py-[13px] no-underline rounded-sm inline-flex items-center gap-2 transition-all cursor-pointer border-[1.5px] border-paper/[0.6] text-paper bg-transparent hover:border-signal hover:text-signal hover:-translate-y-[1px] focus-visible:outline-2 focus-visible:outline-signal focus-visible:outline-offset-2">

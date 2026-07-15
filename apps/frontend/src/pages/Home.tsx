@@ -11,8 +11,8 @@ export function Home() {
   return (
     <>
       <SEO
-        title="Home"
-        description="From the cocoa farm to the classroom, we're proving that technology and agriculture can grow together. Our roots, mission, and the school we built from scratch - digital literacy, agriculture, and community care."
+        title="Tiani Pekins Foundation"
+        description="A grassroots engineering foundation in Buea, Cameroon - engineering the offline systems that keep digital literacy, agriculture, and community care running."
         path="/"
       />
       <Hero />

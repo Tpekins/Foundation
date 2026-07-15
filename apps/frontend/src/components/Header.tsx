@@ -4,7 +4,7 @@ import { Transect } from "./Transect";
 export function Header() {
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'Our Roots', path: '/about' },
+    { name: 'Our Roots', path: '/our-roots' },
     { name: 'Initiatives', path: '/initiatives' },
     { name: 'Field Log', path: '/field-log' }
   ];
