@@ -2,8 +2,8 @@
   "buildCommand": "yarn install && yarn workspace frontend build",
   "outputDirectory": "dist",
   "framework": "vite",
+  "cleanUrls": true,
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "https://foundation-backend-xi.vercel.app/api/$1" },
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/api/(.*)", "destination": "https://foundation-backend-xi.vercel.app/api/$1" }
   ]
 }
