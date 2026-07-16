@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { SEO } from "./SEO";
 
 export function NotFound() {
   return (
     <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <SEO
         title="Page Not Found"
         description="The page you're looking for doesn't exist. Return to the Tiani Pekins Foundation homepage."
