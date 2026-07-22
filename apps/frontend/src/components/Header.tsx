@@ -13,6 +13,8 @@ export function Header() {
     { name: 'Field Log', path: '/field-log' }
   ];
 
+  const contactItem = { name: 'Contact', href: 'mailto:info@tianipekins.org' };
+
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
@@ -97,8 +99,10 @@ export function Header() {
               <NavLink
                 to={item.path}
                 className={({ isActive }) =>
-                  `block py-[18px] text-paper no-underline text-[16px] font-ui font-semibold tracking-[0.08em] uppercase border-b border-paper/25 transition-colors ${
-                    isActive ? 'text-ochre' : 'text-paper hover:text-ochre'
+                  `block py-[18px] text-paper no-underline text-[16px] font-ui font-semibold tracking-[0.08em] uppercase border-b border-paper/25 transition-colors duration-200 ${
+                    isActive
+                      ? 'text-ochre bg-ochre/10'
+                      : 'text-paper hover:text-ochre hover:bg-ochre/10'
                   }`
                 }
               >
@@ -106,6 +110,15 @@ export function Header() {
               </NavLink>
             </li>
           ))}
+          {/* Contact link with extra gap */}
+          <li className="w-full text-center mt-8">
+            <a
+              href={contactItem.href}
+              className="block py-[18px] text-paper no-underline text-[16px] font-ui font-semibold tracking-[0.08em] uppercase border-b border-paper/25 transition-colors duration-200 hover:text-ochre hover:bg-ochre/10"
+            >
+              {contactItem.name}
+            </a>
+          </li>
         </ul>
       </div>
     </>
